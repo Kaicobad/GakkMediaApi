@@ -1,9 +1,9 @@
 const config = {
-    driver: 'msnodesqlv8',
-    user :'sa',
-    password :'1234',
+    driver: 'msnodesqlv8',//driver support for mssql server
+    user :'sa', //use your user Name
+    password :'1234', //user your sql server pss
     server:'localhost',
-    database:'dbGakk',  
+    database:'dbGakk',  //dbName
     options:{
         trustedconnection: true,
         enableArithAbort : true, 
