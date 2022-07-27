@@ -1,7 +1,7 @@
 const config = {
     driver: 'msnodesqlv8',//driver support for mssql server
     user :'sa', //use your user Name
-    password :'1234', //user your sql server pss
+    password :'1234', //use your sql server pss
     server:'localhost',
     database:'dbGakk',  //dbName
     options:{

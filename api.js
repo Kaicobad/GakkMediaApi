@@ -32,24 +32,34 @@ router.route('/products').get((request,response)=>
  //get products api ends
 
  //get ProductById start
- router.route('/productbyid/:id').get((request,response)=>{
-
-    dboperations.getProductById(request.params.id).then(result => {
+ router.route('/productbyid/:id').get((request,response)=>
+ {
+    dboperations.getProductById(request.params.id).then(result => 
+    {
        response.json(result[0]);
     })
-
 })
  //get ProductById Ends
+
+ //Delete Product start
+ router.route('/delete/:id').delete((request,response)=>
+ {
+    dboperations.deleteProduct(request.params.id).then(result => 
+    {
+       response.json(result[0]);
+    })
+})
+ //Delete Product Ends
 
 //  addproduct start
 router.route('/addproduct').post((request,response)=>
 {
     let product = {...request.body}
 
-    dboperations.addProduct(product).then(result => {
+    dboperations.addProduct(product).then(result => 
+    {
        response.status(201).json(result);
     })
-
 })
 //  addproduct end
 

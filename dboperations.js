@@ -54,9 +54,26 @@ async function getProductById(ProductId)
      }
  }
 
+ async function deleteProduct(ProductId)
+ {
+     try 
+     {
+         let pool = await sql.connect(config);
+         let products =await pool.request()
+         .input('productId', sql.Int, ProductId)
+         .query("delete from tblProduct where ProductId = @productId");
+         return products.recordset;
+     } 
+     catch (error) 
+     {
+         console.log(error);
+     }
+ }
+
 module.exports = 
 {
     getProducts : getProducts,
     getProductById : getProductById,
-    addProduct : addProduct
+    addProduct : addProduct,
+    deleteProduct : deleteProduct
 }
